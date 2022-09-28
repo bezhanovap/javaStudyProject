@@ -41,17 +41,17 @@ public class FirstExample {
          насколько быстрее голодный Вася съедает один банан?
         */
         int countOfBananas = 3; //Количество бананов
-        int hungryVasyaTime = 9; // время за которое съедает голодный
-        int notHungryVasyaTime = 15; // время, когда сыт
+        int hungryTime = 9; // время за которое съедает голодный
+        int notHungryTime = 15; // время, когда сыт
 
         // Определим время, за которое Вася съедает один банан когда голоден
-        int oneBananaHungryVasyaTime = hungryVasyaTime / countOfBananas;
+        int oneBananaHungryTime = hungryTime / countOfBananas;
 
         // Определим время, за которое Вася съедает один банан когда сыт
-        int oneBananaNotHungryVasyaTime = notHungryVasyaTime / countOfBananas;
+        int oneBananaNotHungryTime = notHungryTime / countOfBananas;
 
         //найдём разницу во времени поедания банана. Из времени поедания, когда Вася сыт вычтем время, когда голоден
-        int deltaTime = oneBananaNotHungryVasyaTime - oneBananaHungryVasyaTime;
+        int deltaTime = oneBananaNotHungryTime - oneBananaHungryTime;
 
         System.out.println("Задача 3. Дано: Голодный Вася съедает за 9 минут 3 банана, а сытый за 15 минут,\n" +
                 " насколько быстрее голодный Вася съедает один банан?");
