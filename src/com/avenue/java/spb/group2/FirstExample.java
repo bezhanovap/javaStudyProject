@@ -19,9 +19,7 @@ public class FirstExample {
         System.out.println("Задача1. \nХитрый бухгалтер разделил 5 рублей на 2 кассы. \nСколько рублей лежит в каждой кассе?");
 
         System.out.println("Ответ: \nВ каждой кассе лежит: " + inEachCashBox + " руб.");
-        System.out.println("");
-        System.out.println("--------------------------------------------------------------------");
-        System.out.println("");
+        System.out.println("\n--------------------------------------------------------------------\n");
 
 
         /*Task2
@@ -35,9 +33,7 @@ public class FirstExample {
 
         System.out.println("Ответ: \nУ квадрата все стороны равны," +
                 " поэтому будем искать площадь прямоугольника. \nПлощадь равна: " + square);
-        System.out.println("");
-        System.out.println("--------------------------------------------------------------------");
-        System.out.println("");
+        System.out.println("\n--------------------------------------------------------------------\n");
 
 
         /*Task3
@@ -61,9 +57,7 @@ public class FirstExample {
                 " насколько быстрее голодный Вася съедает один банан?");
 
         System.out.println("Ответ: \nГолодный Вася съедает один банан на " + deltaTime + " мин. быстрее");
-        System.out.println("");
-        System.out.println("--------------------------------------------------------------------");
-        System.out.println("");
+        System.out.println("\n--------------------------------------------------------------------\n");
 
 
         /*Task4
@@ -93,6 +87,8 @@ public class FirstExample {
         //int sum = 4 + a + b;
 
         System.out.println("sum = " + sum);
+
+        System.out.println("\n--------------------------------------------------------------------\n");
 
 
 
