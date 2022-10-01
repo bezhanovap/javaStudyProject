@@ -73,23 +73,50 @@ public class SecondExample {
          }
          */
 
+
         //Task1
         /*1 Написать программу, чтобы она:
         - выводил на экран строку "Число меньше 5", если число, которое мы ей подадим меньше 5,
                 - выводил строку "Число больше 5", если число, которое мы ей подадим больше 5,
                 - выводил строку "Число равно 5", если число, которое мы ей подадим равен 5.*/
 
+        System.out.println("Task1");
+
+        int numberToCheck = 5; //Число, которое проверяем
+
+        if (numberToCheck > 5) {
+            System.out.println("Число больше 5");
+        } else if (numberToCheck < 5) {
+            System.out.println("Число меньше 5");
+        } else {
+            System.out.println("Число равно 5");
+        }
+
+        System.out.println("\n--------------------------------------------------------------------\n");
+
         //Task2
         /*2 Напиши программу. которая будет проверять попало ли целое число, которое мы ей подадим
         в интервал от 50 до 100 и сообщить результат на экран в следующем виде:
         "Число number не содержится в интервале." или "Число number содержится в интервале.", где number - число, которое мы ей подадим.
 
-
-                Пример для числа 112:
+        Пример для числа 112:
         Число 112 не содержится в интервале.
 
         Пример для числа 60:
         Число 60 содержится в интервале.*/
+
+        System.out.println("Task2");
+
+        int numberToCheckInterval = 60; //Проверяемое число
+        boolean isNumberInInterval = 50 < numberToCheckInterval && numberToCheckInterval < 100; // Задаём интервал
+
+        if (isNumberInInterval) {
+            System.out.println("Число " + numberToCheckInterval + " содержится в интервале.");
+        } else {
+            System.out.println("Число " + numberToCheckInterval + " не содержится в интервале.");
+        }
+
+        System.out.println("\n--------------------------------------------------------------------\n");
 
         //Task3
         /*3 Напиши программу, которая по номеру месяца должна определить время года (зима, весна, лето, осень) и вывести на экран.
@@ -100,6 +127,27 @@ public class SecondExample {
         Пример для номера месяца 5:
         весна*/
 
+        System.out.println("Task3");
+
+        int month = 2; //Проверяемое число
+        boolean isMonthNumber = 1 <= month && month <= 12; // Проверим корректность ввода месяца
+
+        if (isMonthNumber) {
+            if (month <= 2 || month >= 12) {
+                System.out.println("зима");
+            } else if (3 <= month && month <= 5) {
+                System.out.println("весна");
+            } else if (6 <= month && month <= 8) {
+                System.out.println("лето");
+            } else {
+                System.out.println("осень");
+            }
+        } else {
+            System.out.println("Введено некорректное значение для номера месяца");
+        }
+
+        System.out.println("\n--------------------------------------------------------------------\n");
+
         //Task4
         /*4
         Написать программу, которая будет проверять число, которое мы подадим ей.
@@ -107,6 +155,24 @@ public class SecondExample {
                 Если число отрицательное, то прибавить единицу.
         Если введенное число равно нулю, необходимо вывести ноль.
         Вывести результат в консоль.*/
+
+        System.out.println("Task4");
+
+        int number = -2; //Проверяемое число
+
+        if (number < 0) {
+            System.out.println("Число " + number + " отрицательное, прибавим к нему 1, получим:");
+            number++;
+            System.out.println(number);
+        } else if (number > 0) {
+            System.out.println("Число " + number + " положительное, увеличим его в 2 раза, получим:");
+            System.out.println(number * 2);
+        } else {
+            System.out.println("Число " + number);
+        }
+
+
+        System.out.println("\n--------------------------------------------------------------------\n");
 
         //Task5
         /*5
@@ -119,6 +185,58 @@ public class SecondExample {
 
         Пример для номера 10:
         такого дня недели не существует*/
+
+        System.out.println("Task5");
+
+        int dayOfWeek = 5; //Проверяемое число
+        boolean isDayOfWeek = 1 <= dayOfWeek && dayOfWeek <= 7; // Проверим корректность ввода дня недели
+
+        if (isDayOfWeek) {
+            /*if (dayOfWeek == 1) {
+                System.out.println("Понедельник");
+            } else if (dayOfWeek == 2) {
+                System.out.println("Вторник");
+            } else if (dayOfWeek == 3) {
+                System.out.println("Среда");
+            } else if (dayOfWeek == 4) {
+                System.out.println("Четверг");
+            } else if (dayOfWeek == 5) {
+                System.out.println("Пятница");
+            } else if (dayOfWeek == 6) {
+                System.out.println("Суббота");
+            } else {
+                System.out.println("Воскресенье");
+            }*/
+
+            switch (dayOfWeek) {
+                case 1:
+                    System.out.println("Понедельник");
+                    break;
+                case 2:
+                    System.out.println("Вторник");
+                    break;
+                case 3:
+                    System.out.println("Среда");
+                    break;
+                case 4:
+                    System.out.println("Четверг");
+                    break;
+                case 5:
+                    System.out.println("Пятница");
+                    break;
+                case 6:
+                    System.out.println("Суббота");
+                    break;
+                case 7:
+                    System.out.println("Воскресенье");
+                    break;
+            }
+        } else {
+            System.out.println("Такого дня недели не существует");
+        }
+
+        System.out.println("\n--------------------------------------------------------------------\n");
+
 
         //Task6
         /*6
@@ -139,6 +257,27 @@ public class SecondExample {
         Годы 1600 и 2000 - високосные, так как они кратны 100 и кратны 400.
         Годы 2100, 2200 и 2300 - не високосные.*/
 
+        System.out.println("Task6");
+
+        int year = 2200; //Проверяемый год
+        int countOfDaysInYear = 365; //Количество дней в не високосном году, соответственно в високосном +1 день = 366
+
+        if (year % 400 == 0) {
+            System.out.println("Год " + year + " високосный");
+            System.out.println("Количество дней в этом году: " + (countOfDaysInYear + 1));
+        } else if (year % 100 == 0) {
+            System.out.println("Год " + year + " не високосный");
+            System.out.println("Количество дней в этом году: " + countOfDaysInYear);
+        } else if (year % 4 == 0) {
+            System.out.println("Год " + year + " високосный");
+            System.out.println("Количество дней в этом году: " + (countOfDaysInYear + 1));
+        } else {
+            System.out.println("Год " + year + " не високосный");
+            System.out.println("Количество дней в этом году: " + countOfDaysInYear);
+        }
+
+        System.out.println("\n--------------------------------------------------------------------\n");
+
         //Task7
         /*7
         Объявить три переменных (a, b, c) - стороны предполагаемого треугольника.
@@ -151,6 +290,20 @@ public class SecondExample {
         Треугольник существует только тогда, когда сумма двух его сторон больше третьей.
         Требуется сравнить каждую сторону с суммой двух других.
         Если хотя бы в одном случае сторона окажется больше либо равна сумме двух других, то треугольника с такими сторонами не существует.*/
+
+        System.out.println("Task7");
+
+        int sideA = 2; //Сторона a
+        int sideB = 3; //Сторона b
+        int sideC = 4; //Сторона c
+
+        if (sideA < sideB + sideC && sideB < sideA + sideC && sideC < sideA + sideB) {
+            System.out.println("Треугольник со сторонами a= " +sideA + ", b= " +sideB + " и c= " +sideC + " - существует");
+        } else {
+            System.out.println("Треугольника со сторонами a= " +sideA + ", b= " +sideB + " и c= " +sideC + " - не существует");
+        }
+
+        System.out.println("\n--------------------------------------------------------------------\n");
 
         //Task8
         /*8
@@ -178,7 +331,26 @@ public class SecondExample {
         Пример для числа 5:
         зелёный*/
 
+        System.out.println("Task8");
 
+        double minutesFromTheBeginningOfTheHour = 2.5; //Время в минутах, прошедшее с начала очередного часа.
+        boolean isCorrectTime = 0<=minutesFromTheBeginningOfTheHour && minutesFromTheBeginningOfTheHour <60; //Проверим значение на соответствие интервалу времени
+
+        System.out.println("Время в минутах, прошедшее с начала очередного часа = " + minutesFromTheBeginningOfTheHour);
+
+        if (isCorrectTime) {
+            if (minutesFromTheBeginningOfTheHour%5 == 0 || minutesFromTheBeginningOfTheHour%5 <3 ){
+                System.out.println("Светофор - зелёный");
+            } else if (minutesFromTheBeginningOfTheHour%5 >=4) {
+                System.out.println("Светофор - красный");
+            } else {
+                System.out.println("Светофор - жёлтый");
+            }
+        } else {
+            System.out.println("Введите корректное значение времени");
+        }
+
+        System.out.println("\n--------------------------------------------------------------------\n");
 
     }
 
