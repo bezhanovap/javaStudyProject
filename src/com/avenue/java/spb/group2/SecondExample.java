@@ -188,11 +188,11 @@ public class SecondExample {
 
         System.out.println("Task5");
 
-        int dayOfWeek = 5; //Проверяемое число
-        boolean isDayOfWeek = 1 <= dayOfWeek && dayOfWeek <= 7; // Проверим корректность ввода дня недели
+        int dayOfWeek = 8; //Проверяемое число
+        /* boolean isDayOfWeek = 1 <= dayOfWeek && dayOfWeek <= 7; // Проверим корректность ввода дня недели
 
         if (isDayOfWeek) {
-            /*if (dayOfWeek == 1) {
+            if (dayOfWeek == 1) {
                 System.out.println("Понедельник");
             } else if (dayOfWeek == 2) {
                 System.out.println("Вторник");
@@ -206,33 +206,36 @@ public class SecondExample {
                 System.out.println("Суббота");
             } else {
                 System.out.println("Воскресенье");
-            }*/
-
-            switch (dayOfWeek) {
-                case 1:
-                    System.out.println("Понедельник");
-                    break;
-                case 2:
-                    System.out.println("Вторник");
-                    break;
-                case 3:
-                    System.out.println("Среда");
-                    break;
-                case 4:
-                    System.out.println("Четверг");
-                    break;
-                case 5:
-                    System.out.println("Пятница");
-                    break;
-                case 6:
-                    System.out.println("Суббота");
-                    break;
-                case 7:
-                    System.out.println("Воскресенье");
-                    break;
             }
         } else {
             System.out.println("Такого дня недели не существует");
+        }*/
+
+        switch (dayOfWeek) {
+            case 1:
+                System.out.println("Понедельник");
+                break;
+            case 2:
+                System.out.println("Вторник");
+                break;
+            case 3:
+                System.out.println("Среда");
+                break;
+            case 4:
+                System.out.println("Четверг");
+                break;
+            case 5:
+                System.out.println("Пятница");
+                break;
+            case 6:
+                System.out.println("Суббота");
+                break;
+            case 7:
+                System.out.println("Воскресенье");
+                break;
+            default:
+                System.out.println("Такого дня недели не существует");
+                break;
         }
 
         System.out.println("\n--------------------------------------------------------------------\n");
