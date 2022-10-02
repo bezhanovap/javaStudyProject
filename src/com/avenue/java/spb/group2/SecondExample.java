@@ -342,7 +342,7 @@ public class SecondExample {
         System.out.println("Время в минутах, прошедшее с начала очередного часа = " + minutesFromTheBeginningOfTheHour);
 
         if (isCorrectTime) {
-            if (minutesFromTheBeginningOfTheHour%5 == 0 || minutesFromTheBeginningOfTheHour%5 <3 ){
+            if (minutesFromTheBeginningOfTheHour%5 <3 ){
                 System.out.println("Светофор - зелёный");
             } else if (minutesFromTheBeginningOfTheHour%5 >=4) {
                 System.out.println("Светофор - красный");
