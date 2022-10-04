@@ -1,6 +1,6 @@
-package com.avenue.java.spb.group2;
+package com.avenue.java.spb.group2.lesson2.homework;
 
-public class FirstExample {
+public class homework2 {
 
     public static int varA = 1;
     public static int varB = 3;
