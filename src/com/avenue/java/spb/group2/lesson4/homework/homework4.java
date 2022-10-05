@@ -226,7 +226,6 @@ public class homework4 {
         System.out.println("Вы указали следующие даннные:");
         System.out.println("Меня зовут "+ name);
         System.out.println("Я родился " + day + "." + month + "." + year);
-
         System.out.println("\n--------------------------------------------------------------------\n");
 
     }
