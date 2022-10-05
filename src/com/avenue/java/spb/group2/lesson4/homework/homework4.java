@@ -26,6 +26,7 @@ public class homework4 {
         for (int i = 1; i <= numM; i++) {
             for (int j = 1; j <= numN; j++) {
                 stringLine = stringLine + "8"; //Формируем строку
+
             }
             System.out.println(stringLine);
             stringLine = ""; // очищаем строку для следующей итерации
@@ -49,9 +50,14 @@ public class homework4 {
 
         System.out.println("Task2");
 
-        System.out.println("Введите размер стороны треугольника");
+        int triangleSide=0;
 
-        int triangleSide = scanner.nextInt(); //Сторона треугольника
+        // Сделаем ограничение, значение должно быть больше 0
+        while (triangleSide<=0) {
+            System.out.println("Введите размер стороны треугольника");
+            triangleSide = scanner.nextInt(); //Сторона треугольника
+        }
+
         String stringLine2 = ""; //Переменная для формирования строки
 
         for (int i = 1; i <= triangleSide; i++) {
@@ -75,7 +81,7 @@ public class homework4 {
 
         System.out.println("Task3");
 
-        System.out.println("Введите три числа через пробел");
+        System.out.println("Введите через пробел три числа для их сравнения");
 
         int firstNum = scanner.nextInt(); //Первое число
         int secondNum = scanner.nextInt(); //Второе
@@ -106,8 +112,9 @@ public class homework4 {
             break;
         }*/
 
-        System.out.println("Task4");
+       System.out.println("Task4");
 
+        System.out.println("Посчитаем сумму чисел. Для завершения введите -1");
         int sumOfNumbers = 0; //Зададим переменную для подсчёта суммы чисел
         while (true){
             System.out.println("Введите число");
@@ -143,8 +150,12 @@ public class homework4 {
 
         System.out.println("Task5");
 
-        System.out.println("Введите число - размер таблицы умножения");
-        int multiplicationTable = scanner.nextInt();
+        //Проверим, что число больше 0
+        int multiplicationTable = 0;
+        while (multiplicationTable<=0){
+            System.out.println("Введите число - размер таблицы умножения");
+            multiplicationTable = scanner.nextInt();
+        }
         int row=1; // в переменную будет передаваться строка
         int column=1; // в переменную будет передаваться столбец
         String stringLine3 = ""; //Переменная для формирования строки
@@ -173,54 +184,57 @@ public class homework4 {
         Меня зовут Вася.
                 Я родился 15.2.1988*/
 
+
+        Scanner sc = new Scanner(System.in);
         System.out.println("Task6");
 
         System.out.println("Предстваьтесь, напишите как Вас зовут?");
-        String name = scanner.nextLine();
+        String name = sc.nextLine();
 
         System.out.println("Введите дату рождения");
-        int year =1900;
+        int year =1899;
         // Ограничим вводимые значения
-        while (year<=1900 || year> 2022) {
+        while (year<1900 || year> 2022) {
             System.out.println("введите год");
-            year = scanner.nextInt();
+            year = sc.nextInt();
         }
 
-        int month =1;
+        int month =0;
         // Ограничим вводимые значения
-        while (month<=1 || month>= 12) {
+        while (month<1 || month> 12) {
             System.out.println("введите месяц");
-            month = scanner.nextInt();
+            month = sc.nextInt();
         }
 
-        int day =1;
         int maxDaysInMonth;
         // Ограничим вводимые значения
 
-        // Выясним какой год, чтобы знать сколько дней в феврале, воспользуемся уже имеющимся решением этой задачи
-        if (year % 400 == 0) {
-            //високосный
-            maxDaysInMonth = 29;
-        } else if (year % 100 == 0) {
-            // не високосный
-            maxDaysInMonth = 28;
-        } else if (year % 4 == 0) {
-            //високосный
-            maxDaysInMonth = 29;
-        } else {
-            // не високосный
-            maxDaysInMonth = 28;
-        }
 
         if (month == 1 || month ==3 || month ==5 || month ==7 || month ==8 || month ==10 || month ==12){
             maxDaysInMonth = 31;
+        } else if (month == 2) {
+            // Выясним какой год, чтобы знать сколько дней в феврале, воспользуемся уже имеющимся решением этой задачи
+            if (year % 400 == 0) {
+                //високосный
+                maxDaysInMonth = 29;
+            } else if (year % 100 == 0) {
+                // не високосный
+                maxDaysInMonth = 28;
+            } else if (year % 4 == 0) {
+                //високосный
+                maxDaysInMonth = 29;
+            } else {
+                // не високосный
+                maxDaysInMonth = 28;
+            }
         } else{
             maxDaysInMonth = 30;
         }
 
-        while (day<=1 || day>= maxDaysInMonth) {
+        int day =0;
+        while (day<1 || day> maxDaysInMonth) {
             System.out.println("введите день");
-            day = scanner.nextInt();
+            day = sc.nextInt();
         }
 
         System.out.println("Вы указали следующие даннные:");
