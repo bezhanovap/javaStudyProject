@@ -188,7 +188,7 @@ public class homework5 {
         Задача: Написать программу, которая вводит с клавиатуры 20 чисел и выводит их в убывающем порядке.*/
 
 
-        System.out.println("Task6");
+        System.out.println("Task7");
         // Создадим массив с 20 элементами
         int[] sortNumArray = new int[20];
 
@@ -202,7 +202,7 @@ public class homework5 {
         int tempValue;
         int count=0;
         // Сравним каждый элемент со следующим "Глупая сортирока"
-       /* for (int i = 0; i < sortNumArray.length-1; i++) {
+        /*for (int i = 0; i < sortNumArray.length-1; i++) {
             count++;
             if (sortNumArray[i]<sortNumArray[i+1]){
                 //Меняем элементы местами
@@ -212,10 +212,24 @@ public class homework5 {
                 //Сбрасываем счётчик, чтобы цикл снова начал с 0 индекса
                 i=-1;
             }
-        }*/
+        }
+        //1349*/
 
-        //Сортировка пузырьком
-        for (int i = 0; i < sortNumArray.length-1; i++) {
+        //Правильная сортировка пузырьком
+        for (int i = 0; i < sortNumArray.length; i++) {
+            for (int j = 0; j < sortNumArray.length; j++) {
+                count++;
+                if (sortNumArray[i]<sortNumArray[j]){
+                    //Меняем элементы местами
+                    tempValue=sortNumArray[i];
+                    sortNumArray[i]=sortNumArray[j];
+                    sortNumArray[j]=tempValue;
+                }
+            }
+        }
+
+        //Сортировка пузырьком ускоренная
+        /*for (int i = 0; i < sortNumArray.length-1; i++) {
             for (int j = 0; j < sortNumArray.length-1; j++) {
                 count++;
                 if (sortNumArray[j]<sortNumArray[j+1]){
@@ -226,6 +240,7 @@ public class homework5 {
                 }
             }
         }
+        //361*/
 
         System.out.println("Отсортированный по убыванию массив");
         for (int i = 0; i < sortNumArray.length; i++) {
