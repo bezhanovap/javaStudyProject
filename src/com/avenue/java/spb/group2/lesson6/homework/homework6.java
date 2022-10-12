@@ -85,9 +85,9 @@ public class homework6 {
         String[] convertedText2=new String[index2];
         for (int i = 0; i < convertedText2.length; i++) {
             if (textToConvert2[i].length()%2==0){
-                convertedText2[i]=textToConvert2[i]+textToConvert2[i];
+                convertedText2[i]=textToConvert2[i].concat(textToConvert2[i]);
             }else{
-                convertedText2[i]=textToConvert2[i]+textToConvert2[i]+textToConvert2[i];
+                convertedText2[i]=textToConvert2[i].concat(textToConvert2[i]).concat(textToConvert2[i]);
             }
 
             System.out.println(convertedText2[i]);
