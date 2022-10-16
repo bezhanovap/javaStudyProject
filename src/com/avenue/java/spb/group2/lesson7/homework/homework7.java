@@ -65,6 +65,18 @@ public class homework7 {
     //5 Метод int calc(int num1, int num2, char operation) - должен выполнять над числами num1 и num2
     // арифметическую операцию, заданную operation.
     public static Double calc(Double num1, Double num2, char operation){
+        // Здесь можно использовать switch case!
+        /*switch (operation){
+            case '+':
+                return (num1+num2);
+            case '-':
+                return (num1-num2);
+            case '*':
+                return (num1*num2);
+            default :
+                return (num1/num2);
+        }*/
+
         if (operation=='+'){
             return (num1+num2);
         } else if (operation=='-') {
