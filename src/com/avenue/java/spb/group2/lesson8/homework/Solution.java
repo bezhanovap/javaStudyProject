@@ -3,6 +3,15 @@ package com.avenue.java.spb.group2.lesson8.homework;
 public class Solution {
 
     public static void main(String[] args) {
+    /*3
+        1. Внутри класса Solution создай public static классы Man и Woman.
+        2. У классов должны быть поля: name (String), age (int), address (String).
+        3. Создай конструкторы, в которые передаются все возможные параметры.
+        4. Создай по два объекта каждого класса со всеми данными используя конструктор.
+        5. Объекты выведи на экран в таком формате: name + " " + age + " " + address
+
+        В этой задаче можно создавать static class внутри основного класса*/
+
         Man oleg = new Man("Олег", 25, "Пушкин");
         Man roman = new Man("Роман", 28, "Колпино");
         Woman veronika = new Woman("Вероника", 29, "Парголово");
@@ -15,15 +24,6 @@ public class Solution {
 
     }
 
-    /*3
-        1. Внутри класса Solution создай public static классы Man и Woman.
-        2. У классов должны быть поля: name (String), age (int), address (String).
-        3. Создай конструкторы, в которые передаются все возможные параметры.
-        4. Создай по два объекта каждого класса со всеми данными используя конструктор.
-        5. Объекты выведи на экран в таком формате: name + " " + age + " " + address
-
-        В этой задаче можно создавать static class внутри основного класса*/
-
     public static class Man {
         // Поля
         private String name;
@@ -31,29 +31,6 @@ public class Solution {
         private String address;
 
         // Конструкторы
-        public Man(String name) {
-            this.name = name;
-        }
-
-        public Man(int age) {
-            this.age = age;
-        }
-
-        public Man(String name, int age) {
-            this.name = name;
-            this.age = age;
-        }
-
-        public Man(String name, String address) {
-            this.name = name;
-            this.address = address;
-        }
-
-        public Man(int age, String address) {
-            this.age = age;
-            this.address = address;
-        }
-
         public Man(String name, int age, String address) {
             this.name = name;
             this.age = age;
@@ -93,29 +70,6 @@ public class Solution {
         private String address;
 
         // Конструкторы
-        public Woman(String name) {
-            this.name = name;
-        }
-
-        public Woman(int age) {
-            this.age = age;
-        }
-
-        public Woman(String name, int age) {
-            this.name = name;
-            this.age = age;
-        }
-
-        public Woman(int age, String address) {
-            this.age = age;
-            this.address = address;
-        }
-
-        public Woman(String name, String address) {
-            this.name = name;
-            this.address = address;
-        }
-
         public Woman(String name, int age, String address) {
             this.name = name;
             this.age = age;

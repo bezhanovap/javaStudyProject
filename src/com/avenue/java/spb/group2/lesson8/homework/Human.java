@@ -45,8 +45,8 @@ public class Human {
         return age;
     }
 
-    public void setAge(int age){
-        this.age=age;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public Human getFather() {
@@ -57,12 +57,12 @@ public class Human {
         this.father = father;
     }
 
-    public Human getMother(){
+    public Human getMother() {
         return mother;
     }
 
-    public void setMother (Human mother){
-        this.mother=mother;
+    public void setMother(Human mother) {
+        this.mother = mother;
     }
 
 
