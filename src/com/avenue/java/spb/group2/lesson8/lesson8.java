@@ -1,7 +1,5 @@
 package com.avenue.java.spb.group2.lesson8;
 
-import java.util.Scanner;
-
 public class lesson8 {
     public static void main(String[] args) {
         /**Методы-
@@ -69,7 +67,7 @@ public class lesson8 {
             4. Скопировать большой массив на 20 чисел в два маленьких: половину в первый маленький, а вторую во второй
             5. Вывести второй маленький массив на экран, каждое значение с новой строки   */
 
-        Scanner scanner=new Scanner(System.in);
+        /*Scanner scanner=new Scanner(System.in);
 
         int [] bigArray =new int[20];
         int [] smallArray1 =new int[10];
@@ -108,8 +106,34 @@ public class lesson8 {
 
         for (int i = 0; i < smallArray2.length; i++) {
             System.out.println(smallArray2[i]);
-        }
+        }*/
 
+
+        // Конструкторы и создание объектов классов
+
+        String s = "";
+        String s1 = new String("");
+        Contact viktor = new Contact("Виктор", "qwrw@mail.ru", "9999999");
+        Contact denis1 = new Contact("Денис", "qwrsdfw@mail.ru", "9999977");
+        Contact denis2 = new Contact("Денис", "qwrwffff@mail.ru", "99999988");
+        Contact alex = new Contact("Александр", "qwrwsarw@mail.ru", "9999559");
+        Contact vasilii = new Contact("Василий", "qwrwsfffq@mail.ru", "9966999");
+
+        // viktor.setName("Виталий");
+        // System.out.println(viktor.getName()+ " "+ viktor.getEmail() + " " + viktor.getPhoneNumber());
+
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.addContact(viktor);
+        phoneBook.addContact(denis1);
+        phoneBook.addContact(denis2);
+        phoneBook.addContact(alex);
+        phoneBook.addContact(vasilii);
+
+        // phoneBook.search("Виктор");
+
+        // phoneBook.edit("Виктор", "Виталий");
+
+        phoneBook.delete("Денис");
     }
 }
 
