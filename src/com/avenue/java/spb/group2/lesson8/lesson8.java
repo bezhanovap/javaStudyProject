@@ -134,6 +134,7 @@ public class lesson8 {
         // phoneBook.edit("Виктор", "Виталий");
 
         phoneBook.delete("Денис");
+
     }
 }
 
