@@ -86,6 +86,12 @@ public class homework9 {
         Category bookCategory=new Category("Books", books);
         Category smartphoneCategory=new Category("Smartphones", smartphones);
 
+        // Можно также задавать категории не через конструктор, а через set
+        /*bookCategory.setProductsArray(books);
+        smartphoneCategory.setProductsArray(smartphones);*/
+
+
+
         // Создадим массив купленных товаров
         Product[] purchased=new Product[2];
         purchased[0]=java;
@@ -93,9 +99,13 @@ public class homework9 {
 
         // Создадим корзину пользователя
         Basket user1Basket=new Basket(purchased);
+        // если бы был конструктор по умолчанию с пустыми параметрами, то можно было бы использоввать user1Basket.setPurchasedGoods(purchased);
+
 
         // Создадим пользователя
         User user1=new User("User1", "1234567890", user1Basket);
+        // или можно задать корзину пользователя
+        /*user1.setUserBasket(user1Basket);*/
 
         /*3
 
