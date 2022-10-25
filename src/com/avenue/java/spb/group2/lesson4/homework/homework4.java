@@ -97,6 +97,20 @@ public class homework4 {
             System.out.println("Числа равны " + firstNum);
         }
 
+
+        // Интересное решение другого учащегося
+        /** int a = 10;
+         int b = 16;
+         int c = 75;
+
+         if ((a - b) * (c - a) >= 0) {
+         System.out.print(a);
+         } else if ((b - a) * (c - b) >= 0) {
+         System.out.print(b);
+         } else {
+         System.out.print(c);
+         }*/
+
         System.out.println("\n--------------------------------------------------------------------\n");
 
         //Task4
