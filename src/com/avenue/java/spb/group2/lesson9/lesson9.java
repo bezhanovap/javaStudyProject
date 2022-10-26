@@ -2,6 +2,8 @@ package com.avenue.java.spb.group2.lesson9;
 
 import com.avenue.java.spb.group2.lesson8.PhoneBook;
 
+import java.util.ArrayList;
+
 public class lesson9 {
     public static void main(String[] args) {
         /**
@@ -11,10 +13,13 @@ public class lesson9 {
          protected - внутри пакета и его наследникам, то есть дочерним классам, расположенных в других ＿
          --------- будет доступен только внутри текущего пакета (текущей папки);
          private - только внутри текущего класса (файла);
+
          2. Наследование - extends - это механизм, который позволяет создавать классы на основе
          других классов наследуя их метады в дочерних (подчиненных) классах.
+
          3. Абстракция - означает выделение главных, наиболее значимых характеристик предмета и
          нооборот - отбрасывание второстепенных, незначительных.
+
          4. Полиморфизм - это способность программы идентично использовать объекты с одинаковым интерфейсом
          без информации о конкретном типе этого объекта.
          Мы можем работать со многими типами, как с одним (при условии, что эти типы являются производными (дочерними)
@@ -80,8 +85,33 @@ public class lesson9 {
         disks[2] = diskVideo1;
         disks[3] = diskVideo2;
 
-
         UtilDisk.findOldDisk(disks);
+
+
+
+
+
+        ZAnimal zAnimal=new ZAnimal();
+        zAnimal.eat();
+
+        ZDog zDog=new ZDog();
+        zDog.eat();
+        zDog.bark();
+
+
+
+        ZCat zCat=new ZCat();
+
+
+        test(zAnimal);
+        test(zDog);
+        test(zCat);
+
+
+    }
+
+    public static void test(ZAnimal zAnimal){
+        zAnimal.eat();
     }
 }
 
