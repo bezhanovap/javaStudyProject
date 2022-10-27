@@ -52,9 +52,9 @@ public class SaperGame {
         for (int i = 0; i < bombCount; i++) {
 
             // Воспользуемся генератором и получим два случайных числа - координаты ячейки
-            Random r = new Random();
-            int x = r.nextInt(sideX);
-            int y = r.nextInt(sideY);
+            Random random = new Random();
+            int x = random.nextInt(sideX);
+            int y = random.nextInt(sideY);
 
             // По условиям игры в угловых ячейках бомба не ставится
             // Также не будем ставить бомбу в ячейку, где уже есть бомба
