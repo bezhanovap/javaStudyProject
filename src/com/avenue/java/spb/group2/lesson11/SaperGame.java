@@ -15,46 +15,46 @@ public class SaperGame {
     public void bombsByLevel(int level) {
 
         int bombCount; // Количество бомб
-        int sideX; // Количество ячеек в ширину
-        int sideY; // Количество ячеек в высоту
+        int mapWidth; // Количество ячеек в ширину
+        int mapHeight; // Количество ячеек в высоту
 
         // В соответствии с выбранным уровнем зададим основные параметры игры - размер поля и количество бомб
         switch (level) {
             case 1:
                 bombCount = 99;
-                sideX=30;
-                sideY=16;
+                mapWidth=30;
+                mapHeight=16;
                 break;
             case 2:
                 bombCount = 40;
-                sideX=16;
-                sideY=16;
+                mapWidth=16;
+                mapHeight=16;
                 break;
             case 3:
                 bombCount = 10;
-                sideX=10;
-                sideY=10;
+                mapWidth=10;
+                mapHeight=10;
                 // В оригинальной игре 9*9
-                /*sideX=9;
-                sideY=9;*/
+                /*mapWidth=9;
+                mapHeight=9;*/
                 break;
             default:
                 bombCount = 10;
-                sideX=9;
-                sideY=9;
+                mapWidth=9;
+                mapHeight=9;
                 break;
         }
 
         // Зададим размер массива
-        map= new int[sideY][sideX];
+        map= new int[mapHeight][mapWidth];
 
         // Заполним карту бомбами
         for (int i = 0; i < bombCount; i++) {
 
             // Воспользуемся генератором и получим два случайных числа - координаты ячейки
             Random random = new Random();
-            int x = random.nextInt(sideX);
-            int y = random.nextInt(sideY);
+            int x = random.nextInt(mapWidth);
+            int y = random.nextInt(mapHeight);
 
             // По условиям игры в угловых ячейках бомба не ставится
             // Также не будем ставить бомбу в ячейку, где уже есть бомба
@@ -70,8 +70,8 @@ public class SaperGame {
         }
 
         // Распечатаем карту
-        for (int i = 0; i < sideY; i++) {
-            for (int j = 0; j < sideX; j++) {
+        for (int i = 0; i < mapHeight; i++) {
+            for (int j = 0; j < mapWidth; j++) {
                 if (map[i][j] == -1) {
                     System.out.print(" " + map[i][j]);
                 } else {
