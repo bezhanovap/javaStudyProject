@@ -5,20 +5,22 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class SaperGame {
     // Поля
+    // Инициализировать переменные и массивы будем тогда, когда узнаем размер поля при выборе уровня
+
     public int rows; // Количество строк
     public int columns; // Количество столбцов
-    public int[][] mapGame; // Скрытое поле с бомбами
-    public int[][] visibleMap; // Видимое поле
+    public int[][] mapGame; // Скрытое поле с бомбами, размер укажем позже
+    public int[][] visibleMap; // Видимое поле, размер укажем позже
 
     // Конструкторы
 
 
     // Методы
 
-    // Расставить бомбы в массиве в виде значений "-1"
+    // Расставим бомбы в массиве в виде значений "-1"
     public void bombsByLevel(int level) {
 
-        int bombCount; // Количество бомб
+        int bombCount; // Количество бомб, узнаем, когда выберем уровень игры
 
         // В соответствии с выбранным уровнем зададим основные параметры игры - размер поля и количество бомб
         switch (level) {
@@ -47,7 +49,7 @@ public class SaperGame {
                 break;
         }
 
-        // Зададим размер массива
+        // Зададим размер массива, инициализируем его
         mapGame = new int[rows][columns];
         visibleMap = new int[rows][columns];
 
@@ -90,8 +92,8 @@ public class SaperGame {
         for (int i = 0; i < mapGame.length; i++) { //Строки
             for (int j = 0; j < mapGame[i].length; j++) { // Колонки
                 if (mapGame[i][j] == -1) {
-                    for (int k = i - 1; k < i + 1; k++) { //Строки возле бомбы
-                        for (int l = j - 1; l < j + 1; l++) { // Колонки возле бомбы
+                    for (int k = i - 1; k <= i + 1; k++) { //Строки возле бомбы
+                        for (int l = j - 1; l <= j + 1; l++) { // Колонки возле бомбы
                             if ((k >= 0 && k < mapGame.length) && (l >= 0 && l < mapGame[i].length) && mapGame[k][l] != -1) {
                                 mapGame[k][l]++;
                             }
@@ -107,22 +109,22 @@ public class SaperGame {
 
     // Распечатаем карту в зависимости от её размера
     public void printMapGame() {
-        if (mapGame.length>10){
+        if (mapGame.length > 10) {
             printBigField();
-        }else{
+        } else {
             printSmallField();
         }
     }
 
     private void printBigField() {
         String columnNumbers = "      ";
-        String columnDelimiter= "      ";
+        String columnDelimiter = "      ";
 
         // Генерируем номера столбцов
         for (int i = 0; i < mapGame[0].length; i++) {
-            if (i<10) {
+            if (i < 10) {
                 columnNumbers += "  " + i + "  ";
-            }else{
+            } else {
                 columnNumbers += "  " + i + " ";
             }
             columnDelimiter += "—————";
@@ -132,9 +134,9 @@ public class SaperGame {
 
         // Генерируем строки с их номерами
         for (int i = 0; i < mapGame.length; i++) {
-            if (i<10) {
+            if (i < 10) {
                 System.out.print("  " + i + "  |");
-            }else{
+            } else {
                 System.out.print("  " + i + " |");
             }
 
@@ -157,7 +159,7 @@ public class SaperGame {
 
     private void printSmallField() {
         String columnNumbers = "    ";
-        String columnDelimiter= "    ";
+        String columnDelimiter = "    ";
 
         for (int i = 0; i < mapGame.length; i++) {
             columnNumbers += " " + i + " ";
@@ -180,13 +182,6 @@ public class SaperGame {
                 } else {
                     System.out.print(" * ");
                 }
-
-
-                /*if (mapGame[i][j] == -1) {
-                    System.out.print(" " + mapGame[i][j]);
-                } else {
-                    System.out.print("  " + mapGame[i][j]);
-                }*/
             }
             System.out.println();
         }
@@ -194,26 +189,65 @@ public class SaperGame {
 
     // Делаем ход и проверяем поле
     public boolean doStep() {
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Введите номер строки:");
-        int stepRow= scanner.nextInt();
+        int stepRow = scanner.nextInt();
 
         System.out.println("Введите номер столбца:");
-        int stepColumn= scanner.nextInt();
+        int stepColumn = scanner.nextInt();
 
-        if (stepRow<0 || stepRow>rows || stepColumn<0 || stepColumn>columns){
+        if (stepRow < 0 || stepRow > rows || stepColumn < 0 || stepColumn > columns) {
+            System.out.println("Вы ввели некорректные данные, повторите ввод");
+            System.out.println("Строки от 0 до " + (rows - 1));
+            System.out.println("Столбцы от 0 до " + (columns - 1));
             return doStep();
-        }else{
-            if (mapGame[stepRow][stepColumn]!=-1){
-                visibleMap[stepRow][stepColumn]=1;
+        } else {
+            if (visibleMap[stepRow][stepColumn] == 1) {
+                System.out.println("Вы уже совершали такой ход, делайте следующий");
+                return doStep();
+            } else if (mapGame[stepRow][stepColumn] != -1) {
+                this.checkZeroOnMapGame(stepRow, stepColumn);
                 printMapGame();
-                return true;
-            }else{
-                visibleMap[stepRow][stepColumn]=1;
+                return checkVictory();
+            } else {
+                visibleMap[stepRow][stepColumn] = 1;
                 printMapGame();
+                System.out.println("Вы проиграли!");
                 return false;
             }
         }
+    }
+
+    // Проверка
+    private boolean checkVictory() {
+        boolean check = false;
+        for (int i = 0; i < visibleMap.length; i++) {
+            for (int j = 0; j < visibleMap[i].length; j++) {
+                if (mapGame[i][j] != -1 && visibleMap[i][j] == 0) {
+                    check = true;
+                }
+            }
+        }
+        if (check == false) {
+            System.out.println("Поздравляем, вы победили!");
+        }
+        return check;
+    }
+
+    private void checkZeroOnMapGame(int stepRow, int stepColumn) {
+        visibleMap[stepRow][stepColumn] = 1;
+        for (int i = stepRow - 1; i <= stepRow + 1; i++) {
+            for (int j = stepColumn - 1; j <= stepColumn + 1; j++) {
+                if ((i >= 0 && i < mapGame.length) && (j >= 0 && j < mapGame[0].length) && mapGame[i][j] >= 0) {
+                    if (mapGame[i][j] == 0 && visibleMap[i][j] == 0) {
+                        this.checkZeroOnMapGame(i, j);
+                    } else {
+                        visibleMap[i][j] = 1;
+                    }
+                }
+            }
+        }
+
     }
 
 }
