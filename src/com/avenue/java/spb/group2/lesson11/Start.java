@@ -19,5 +19,17 @@ public class Start {
 
         // 3. Настроим сложность
         saperGame.bombsByLevel(level);
+
+        // 4. Расставим вспомогательные цифры
+        saperGame.placeHelpNumbersOnMap();
+
+        // 5. Распечатаем поле с бомбами
+        saperGame.printMapGame();
+
+        // 6. Делаем ход
+        boolean playing=true;
+        while(playing){
+            playing=saperGame.doStep();
+        }
     }
 }
