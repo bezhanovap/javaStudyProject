@@ -3,8 +3,13 @@ package com.avenue.java.spb.group2.lesson12.models;
 import com.avenue.java.spb.group2.lesson12.interfaces.BJGame;
 
 public class BJGameImpl implements BJGame {
-    PlayerImpl[] playersInGame = new PlayerImpl[10];
+    PlayerImpl[] playersInGame;
     DeckOfCardsImpl deck = new DeckOfCardsImpl();
+
+    public void numberOfPlayersInGame(int numberPlayers) {
+        // Тут к количеству игроков добавим ещё 1 - крупье
+        this.playersInGame = new PlayerImpl[numberPlayers+1];
+    }
 
     @Override
     public void addPlayerToGame(PlayerImpl player) {

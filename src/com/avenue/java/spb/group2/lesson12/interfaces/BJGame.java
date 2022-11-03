@@ -15,4 +15,6 @@ public interface BJGame {
     // Определить победителя
     void determineWinner();
     int countPlayersInGame();
+
+    void numberOfPlayersInGame(int numPlayers);
 }
