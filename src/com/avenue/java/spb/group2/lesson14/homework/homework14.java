@@ -8,7 +8,7 @@ public class homework14 {
     /*1
         Введи с клавиатуры 5 слов в список строк. Удали 3 - ий элемент списка, и выведи оставшиеся элементы в обратном порядке.*/
 
-        /*System.out.println("Task1.");
+        System.out.println("Task1.");
 
         ArrayList<String> arrayList1 = new ArrayList<>();
 
@@ -21,14 +21,14 @@ public class homework14 {
         // Распечатаем
         printArrayElements(arrayList1);
 
-        System.out.println("\n--------------------------------------------------------------------\n");*/
+        System.out.println("\n--------------------------------------------------------------------\n");
 
     /*2
         1. Создай список из слов "мама", "мыла", "раму".
         2. После каждого слова вставь в список строку, содержащую слово "именно".
         3. Вывести результат на экран, каждый элемент списка с новой строки.*/
 
-        /*System.out.println("Task2.");
+        System.out.println("Task2.");
 
         ArrayList<String> arrayList2 = new ArrayList<>();
 
@@ -42,7 +42,7 @@ public class homework14 {
 
         // Распечатаем
         printArrayElements(arrayList2);
-        System.out.println("\n--------------------------------------------------------------------\n");*/
+        System.out.println("\n--------------------------------------------------------------------\n");
 
 
     /*3
@@ -71,7 +71,7 @@ public class homework14 {
         return null;
     }*/
 
-        /*System.out.println("Task3.");
+        System.out.println("Task3.");
 
         ArrayList<String> strings = new ArrayList<String>();
 
@@ -89,7 +89,7 @@ public class homework14 {
 
         // Распечатаем
         printArrayElements(strings);
-        System.out.println("\n--------------------------------------------------------------------\n");*/
+        System.out.println("\n--------------------------------------------------------------------\n");
 
 
     /*4
@@ -98,7 +98,7 @@ public class homework14 {
         "альфа", "бета", "гамма" -> "альфа", "альфа", "бета", "бета", "гамма", "гамма"
         3. Выведи результат на экран, каждое значение с новой строки.*/
 
-        /*System.out.println("Task4.");
+        System.out.println("Task4.");
 
         ArrayList<String> arrayList4 = new ArrayList<>();
 
@@ -110,7 +110,7 @@ public class homework14 {
 
         // Распечатаем
         printArrayElements(arrayList4);
-        System.out.println("\n--------------------------------------------------------------------\n");*/
+        System.out.println("\n--------------------------------------------------------------------\n");
 
     /*5
         1. Введи с клавиатуры 10 слов в список строк.
