@@ -1,0 +1,2 @@
+# javaStudyProject
+Java learning tasks
