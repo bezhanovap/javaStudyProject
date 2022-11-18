@@ -34,10 +34,16 @@ public class homework16 {
         dictFamilyName.put("Иванов", "Василий");
 
         // Распечатаем полученный словарь
-        for (Map.Entry<String, String> entry:
+        /*for (Map.Entry<String, String> entry:
                 dictFamilyName.entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
-        }
+        }*/
+
+        // Воспользуемся лямбда-выражениями для печати
+        dictFamilyName.forEach((s, s2) -> System.out.println(s + " : " + s2));
+
+        // stream
+        //dictFamilyName.entrySet().stream();
 
         System.out.println("\n--------------------------------------------------------------------\n");
 
@@ -68,11 +74,20 @@ public class homework16 {
         System.out.println("Введите название месяца:");
         String month = scanner.nextLine();
 
-        if (months.containsKey(month.toLowerCase())) {
+        /*if (months.containsKey(month.toLowerCase())) {
             System.out.println(month + " - это " + months.get(month.toLowerCase())+ " месяц");
         } else {
             System.out.println("Некорректный ввод");
-        }
+        }*/
+
+        // Вместо простого условия можно использовать тернарный оператор
+        System.out.println(months.containsKey(month.toLowerCase()) ? (month + " - это " + months.get(month.toLowerCase())+ " месяц") : "Некорректный ввод");
+
+
+        // stream
+
+       // months.entrySet().stream().filter( -> s.equals(month)).forEach(System.out::println);
+
 
         System.out.println("\n--------------------------------------------------------------------\n");
 
@@ -108,11 +123,14 @@ public class homework16 {
         System.out.println("Введите название города:");
         String city = scanner.nextLine();
 
-        if (families.containsKey(city.toLowerCase())) {
+        /*if (families.containsKey(city.toLowerCase())) {
             System.out.println("В городе " + city + " - живут " + families.get(city.toLowerCase()));
         } else {
             System.out.println("Данных по городу " + city + " нет в словаре");
-        }
+        }*/
+
+        // Используем тернарный оператор
+        System.out.println(families.containsKey(city.toLowerCase()) ? ("В городе " + city + " - живут " + families.get(city.toLowerCase())) : ("Данных по городу " + city + " нет в словаре"));
 
         System.out.println("\n--------------------------------------------------------------------\n");
 
@@ -153,10 +171,14 @@ public class homework16 {
 
 
         // Распечатаем весь словарь
-        for (Map.Entry<String, String> entry:
+        /*for (Map.Entry<String, String> entry:
                 plants.entrySet()) {
             System.out.println(entry.getKey() + " - " + entry.getValue());
-        }
+        }*/
+
+        plants.forEach((s, s2) -> System.out.println(s+" - "+s2));
+
+
         System.out.println("\n--------------------------------------------------------------------\n");
 
 
@@ -200,10 +222,12 @@ public class homework16 {
 
         //напишите тут ваш код
 
-        for (Map.Entry<String, Object> entry:
+        /*for (Map.Entry<String, Object> entry:
                 map.entrySet()) {
             System.out.println(entry.getKey() + " - " + entry.getValue());
-        }
+        }*/
+
+        map.forEach((s, o) -> System.out.println(s+" - "+ o));
 
     }
 }

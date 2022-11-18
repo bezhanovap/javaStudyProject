@@ -19,6 +19,7 @@ public class SmartFridge {
             products.put(product, value);
 
         }
+
     }
 
     public void getProduct(String product, int value) {
