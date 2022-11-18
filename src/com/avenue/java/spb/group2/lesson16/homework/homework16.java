@@ -208,6 +208,8 @@ public class homework16 {
 
         }*/
 
+        System.out.println("Task5.");
+
         Map<String, Object> map = new HashMap<>();
         map.put("Sim", 5);
         map.put("Tom", 5.5);
@@ -228,6 +230,8 @@ public class homework16 {
         }*/
 
         map.forEach((s, o) -> System.out.println(s+" - "+ o));
+
+        System.out.println("\n--------------------------------------------------------------------\n");
 
     }
 }
