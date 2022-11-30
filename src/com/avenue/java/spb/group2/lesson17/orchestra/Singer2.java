@@ -15,10 +15,14 @@ public class Singer2 extends Thread{
             for (int i = 0; i < 2; i++) {
                 System.out.println("FAFAFA---------------");
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(50);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+            }
+
+            synchronized (Monitor.MICROPHONE){
+                Monitor.MICROPHONE.notify();
             }
 
         }
