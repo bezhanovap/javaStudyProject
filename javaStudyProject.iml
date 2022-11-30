@@ -11,7 +11,16 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Program Files/JetBrains/ApachLog4J/log4j-1.2.17.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../Program Files/JetBrains/LibrariesForIDEA/log4j-1.2.17.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../Program Files/JetBrains/LibrariesForIDEA/commons-io-2.11.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
